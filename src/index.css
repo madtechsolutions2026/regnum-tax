@@ -1,0 +1,106 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   Regnum Tax — design tokens
+   Palette taken from the Regnum Tax office signage.
+------------------------------------------------------------------- */
+@theme {
+  --color-navy-950: #06132a;
+  --color-navy-900: #0b1f3f;
+  --color-navy-800: #12294f;
+  --color-navy-700: #14335c;
+  --color-navy-600: #1f4474;
+
+  --color-gold-300: #e8d3a0;
+  --color-gold-400: #d9b868;
+  --color-gold-500: #c8a04a;
+  --color-gold-600: #a07e33;
+
+  --color-ivory-50: #fcfaf5;
+  --color-ivory-100: #f4efe6;
+  --color-ivory-200: #e9e1d2;
+
+  --color-charcoal-900: #1d2129;
+  --color-charcoal-700: #3a404b;
+  --color-charcoal-500: #6b7280;
+
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-display: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --font-sans: 'Manrope', 'Inter', system-ui, sans-serif;
+
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes rule {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-ivory-50 font-sans text-charcoal-900;
+    text-rendering: optimizeLegibility;
+    font-variant-numeric: lining-nums;
+  }
+  ::selection {
+    @apply bg-gold-500/30 text-navy-900;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-gold-500);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .container-lux {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-gold-600;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply block h-px w-8 bg-gold-500;
+  }
+  .heading-xl {
+    @apply font-serif font-medium leading-[1.02] tracking-[-0.01em];
+  }
+  .heading-lg {
+    @apply font-serif text-4xl font-medium leading-[1.08] sm:text-5xl lg:text-[3.5rem];
+  }
+  .gold-rule {
+    background: linear-gradient(90deg, transparent, var(--color-gold-500), transparent);
+  }
+  .glass-dark {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+  }
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .select-caret {
+    @apply cursor-pointer appearance-none pr-6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23C9A227' stroke-width='1.5'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.25rem center;
+    background-size: 12px;
+  }
+  .field {
+    @apply w-full rounded-none border-0 border-b border-navy-900/15 bg-transparent px-0 py-3 text-[0.95rem] text-navy-900 placeholder:text-charcoal-500/60 transition-colors duration-300 focus:border-gold-500 focus:outline-none focus:ring-0;
+  }
+}
