@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Linkedin, Mail } from 'lucide-react'
+import { Briefcase, Mail } from 'lucide-react'
 import { SignatureRule } from './ui/Logo'
 
 const team = [
@@ -25,7 +25,7 @@ const team = [
 
 export default function Team() {
   return (
-    <section id="leadership" className="bg-ivory-50 py-32">
+    <section id="leadership" className="bg-ivory-50 py-20 lg:py-32">
       <div className="container-lux">
         <div className="flex flex-col items-center text-center">
           <span className="eyebrow mb-6">Our Leadership</span>
@@ -64,7 +64,7 @@ export default function Team() {
                       {member.bio}
                     </p>
                     <div className="mt-6 flex items-center gap-4 opacity-0 transition-opacity delay-100 duration-500 group-hover:opacity-100">
-                      <a href="#" className="text-white hover:text-gold-500 transition-colors"><Linkedin className="h-5 w-5" /></a>
+                      <a href="#" className="text-white hover:text-gold-500 transition-colors"><Briefcase className="h-5 w-5" /></a>
                       <a href="#" className="text-white hover:text-gold-500 transition-colors"><Mail className="h-5 w-5" /></a>
                     </div>
                   </div>

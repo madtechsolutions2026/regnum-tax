@@ -47,7 +47,7 @@ export default function TaxCalculator() {
   }
 
   return (
-    <section id="calculator" className="relative bg-navy-950 py-32 text-ivory-50">
+    <section id="calculator" className="relative bg-navy-950 py-20 lg:py-32 text-ivory-50">
       <div className="absolute inset-0 opacity-[0.03] grain" />
       <div className="container-lux relative">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center lg:gap-24">
