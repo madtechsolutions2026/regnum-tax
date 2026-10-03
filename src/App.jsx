@@ -6,7 +6,9 @@ import About from './components/About'
 import Services from './components/Services'
 import WhyRegnum from './components/WhyRegnum'
 import Process from './components/Process'
+import TaxCalculator from './components/TaxCalculator'
 import Industries from './components/Industries'
+import Team from './components/Team'
 import Stats from './components/Stats'
 import Insights from './components/Insights'
 import Testimonials from './components/Testimonials'
@@ -38,7 +40,9 @@ export default function App() {
         <Services />
         <WhyRegnum />
         <Process />
+        <TaxCalculator />
         <Industries />
+        <Team />
         <Stats />
         <Insights />
         <Testimonials />
